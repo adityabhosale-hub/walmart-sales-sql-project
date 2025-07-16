@@ -216,5 +216,5 @@ Let's connect if you're also learning Data Engineering, working on data related 
 
 
 
-**LINKEDIN PROFILE:** [**www.linkedin.com/in/adityabhosale12003**](www.linkedin.com/in/adityabhosale12003)
+**LINKEDIN PROFILE:** [**www.linkedin.com/in/adityabhosale12003**](www.linkedin.com/in/adityabhosale12003/)
 
