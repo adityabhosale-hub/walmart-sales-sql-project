@@ -233,7 +233,7 @@ ORDER BY avg_rating DESC;
 -- ----------------------------------------    SALES  QUESTIONS    ----------------------------------------
 
 
-
+-- Number of sales made in each time of the day per weekday
 SELECT 
     time_of_day, DAY_NAME, SUM(Quantity) AS sales_made
 FROM
