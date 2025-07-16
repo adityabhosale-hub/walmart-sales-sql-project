@@ -76,7 +76,7 @@ Extracts the day of the week from the `Date` column (e.g., Mon, Tue, Wed...).
 
 
 
-- `month\_name`  
+- `month_name`  
 Extracts the month from the `Date` column (e.g., Jan, Feb, Mar...).  
 
 **Insight Enabled**: Helps analyze sales and revenue trends by month.
