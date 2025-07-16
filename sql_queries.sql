@@ -49,11 +49,7 @@ SET
  
 -- --------------------------------------      GENERIC QUESTIONS          ------------------------------------------
 
-
-SELECT 
-    *
-FROM
-    walmart_sales_data;
+-- How many unique cities does the data have?
 
 SELECT DISTINCT
     CITY
@@ -70,11 +66,7 @@ GROUP BY BRANCH , CITY;
 
 -- ------------------------------        PRODUCT QUESTIONS          ------------------------------------
 
-
-SELECT 
-    *
-FROM
-    walmart_sales_data;
+-- How many unique product lines does the data have?
 SELECT 
     COUNT(DISTINCT `Product line`) AS unique_product_lines
 FROM
@@ -82,10 +74,6 @@ FROM
 
 
 -- What is the most common payment method?
-SELECT 
-    *
-FROM
-    walmart_sales_data;
 
 SELECT DISTINCT
     PAYMENT, COUNT(PAYMENT) AS PAYMENT_METHOD
@@ -96,13 +84,6 @@ ORDER BY PAYMENT_METHOD DESC
 LIMIT 1;
 
 -- What is the most selling product line?
-SELECT 
-    `PRODUCT LINE`, COUNT(QUANTITY) AS UNITS_SOLD
-FROM
-    walmart_sales_data
-GROUP BY `PRODUCT LINE`
-ORDER BY UNITS_SOLD DESC;
-
 SELECT 
     `PRODUCT LINE`,
     COUNT(*) AS OCCURANCE,
@@ -198,10 +179,6 @@ HAVING SUM(QUANTITY) > (SELECT
 
 
 -- What is the most common product line by gender?
-SELECT 
-    *
-FROM
-    walmart_sales_data; 
 
 select  `Product line`, Gender, products_purchased
 from  (
@@ -217,10 +194,6 @@ WHERE  ranking =1;
 				
 
 -- What is the average rating of each product line?
-SELECT 
-    *
-FROM
-    walmart_sales_data;
 SELECT 
     `Product line`, ROUND(AVG(Rating), 2) AS avg_rating
 FROM
@@ -266,10 +239,6 @@ LIMIT 1;
 
 -- Which city has the largest tax percent/ VAT (Value Added Tax)?
 SELECT 
-    *
-FROM
-    walmart_sales_data;
-SELECT 
     City, ROUND(AVG(`Tax 5%`), 2) AS VAT
 FROM
     walmart_sales_data
@@ -289,13 +258,7 @@ ORDER BY avg_VAT_paid DESC;
 
 -- ----------------------------------------    CUSTOMER  QUESTIONS      ----------------------------------------
 
-
-
-SELECT 
-    *
-FROM
-    walmart_sales_data;
-
+-- How many unique customer types does the data have?
 SELECT 
     COUNT(DISTINCT `Customer type`) AS 'no. of customer types'
 FROM
@@ -321,7 +284,7 @@ LIMIT 1;
 				
 
 -- Which customer type buys the most?
-
+-- 1. In  Terms  of Items Purchased
 SELECT 
     `Customer type`,
     ROUND(SUM(Quantity), 2) AS 'Items Purchased'
@@ -331,7 +294,7 @@ GROUP BY `Customer type`
 ORDER BY 'Items Purchased' DESC
 LIMIT 1;
 
--- In  Terms  of  Money  Spent
+-- 2. In  Terms  of  Money  Spent
 SELECT 
     `Customer type`, ROUND(SUM(Total), 2) AS 'Total buying'
 FROM
@@ -384,13 +347,13 @@ GROUP BY  time_of_day;
 -- Which time of the day do customers give most ratings per branch?
 SELECT  *
 FROM (
-			SELECT  time_of_day,
-							Branch,
-							ROUND( AVG( Rating ),  2)  AS  avg_rating,
-							RANK()  OVER( PARTITION BY BRANCH ORDER BY AVG( Rating )  DESC)  AS Ranking
-			FROM  walmart_sales_data
-			GROUP BY  time_of_day, Branch
-            )  AS ranked
+	SELECT  time_of_day,
+		Branch,
+		ROUND( AVG( Rating ),  2)  AS  avg_rating,
+		RANK()  OVER( PARTITION BY BRANCH ORDER BY AVG( Rating )  DESC)  AS Ranking
+	FROM  walmart_sales_data
+	GROUP BY  time_of_day, Branch
+       )  AS ranked
 WHERE Ranking = 1
 ORDER BY  Branch;
 
@@ -408,12 +371,12 @@ LIMIT 1;
 -- Which day of the week has the best average ratings per branch?
 SELECT  *
 FROM (
-		SELECT  DAY_NAME,
-						Branch,
-						ROUND( AVG( Rating ),  2)  AS Avg_rating,
-						RANK()  OVER( PARTITION BY Branch ORDER BY ROUND( AVG( Rating ),  2) DESC) AS ranking
-		FROM  walmart_sales_data
-		GROUP BY  DAY_NAME, Branch
+	SELECT  DAY_NAME,
+		Branch,
+		ROUND( AVG( Rating ),  2)  AS Avg_rating,
+		RANK()  OVER( PARTITION BY Branch ORDER BY ROUND( AVG( Rating ),  2) DESC) AS ranking
+	FROM  walmart_sales_data
+	GROUP BY  DAY_NAME, Branch
 ) AS Ranked
 WHERE ranking = 1
 ORDER BY Branch;
