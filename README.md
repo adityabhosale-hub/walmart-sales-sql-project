@@ -1,4 +1,4 @@
-\# **Walmart Sales SQL Project**
+**WALMART SALES SQL PROJECT**
 
 
 
@@ -10,35 +10,15 @@ This project focuses on analysing transactional sales data from a Walmart datase
 
 
 
-\## **Dataset Overview**
+**DATASET OVERVIEW**
 
 
 
-\- **Source**: [Walmart Sales Dataset (Kaggle)](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting)
+**- Source**: [Walmart Sales Dataset (Kaggle)](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting)
 
-\- **Format**: CSV
+**- Format**: CSV
 
-\- **Scope**: 1,000 transactions across 3 branches and multiple product lines
-
-
-
----
-
-
-
-\## **Project Objectives**
-
-
-
-\- Analyse sales trends by time of day and day of the week
-
-\- Identify top-performing product lines
-
-\- Measure customer behaviour across branches and genders
-
-\- Evaluate VAT contributions per product line
-
-\- Explore customer rating patterns over time
+**- Scope**: 1,000 transactions across 3 branches and multiple product lines
 
 
 
@@ -46,7 +26,27 @@ This project focuses on analysing transactional sales data from a Walmart datase
 
 
 
-\## Feature Engineering
+**PROJECT OBJECTIVES**
+
+
+
+- Analyse sales trends by time of day and day of the week
+
+- Identify top-performing product lines
+
+- Measure customer behaviour across branches and genders
+
+- Evaluate VAT contributions per product line
+
+- Explore customer rating patterns over time
+
+
+
+---
+
+
+
+**FEATURE ENGINEERING**
 
 
 
@@ -54,39 +54,32 @@ Before starting with the analysis, I performed basic feature engineering to deri
 
 
 
-\### New Columns Created:
+New Columns Created:
 
 
 
-1\. \*\*`time\_of\_day`\*\*  
+- `time_of_day` 
+Categorises each transaction based on the purchase time into:
+1. Morning
+2. Afternoon
+3. Evening
+4. Night
 
-&nbsp;  Categorises each transaction based on the purchase time into:
-
-&nbsp;  - \*\*Morning\*\*
-
-&nbsp;  - \*\*Afternoon\*\*
-
-&nbsp;  - \*\*Evening\*\*  
-
-&nbsp;  \*Insight Enabled\*: Identifies which part of the day has the most sales or highest ratings.
+**Insight Enabled**: Identifies which part of the day has the most sales or highest ratings.
 
 
 
-2\. \*\*`day\_name`\*\*  
+- `day_name`
+Extracts the day of the week from the `Date` column (e.g., Mon, Tue, Wed...).  
 
-&nbsp;  Extracts the day of the week from the `Date` column (e.g., Mon, Tue, Wed...).  
-
-&nbsp;  \*Insight Enabled\*: Helps determine which day each branch is busiest.
-
+**Insight Enabled**: Helps determine which day each branch is busiest.
 
 
-3\. \*\*`month\_name`\*\*  
 
-&nbsp;  Extracts the month from the `Date` column (e.g., Jan, Feb, Mar...).  
+- `month\_name`  
+Extracts the month from the `Date` column (e.g., Jan, Feb, Mar...).  
 
-&nbsp;  \*Insight Enabled\*: Helps analyze sales and revenue trends by month.
-
-
+**Insight Enabled**: Helps analyze sales and revenue trends by month.
 
 These engineered columns were crucial for answering time-based business questions more efficiently and allowed grouping and ranking by logical periods.
 
@@ -96,11 +89,11 @@ These engineered columns were crucial for answering time-based business question
 
 
 
-\## **Business Questions Addressed**
+**BUSINESS QUESTIONS ADDRESSED**
 
 
 
-* **Generic Questions**
+- **GENERIC QUESTIONS**
 
  	1. How many unique cities does the data have?
 
@@ -108,7 +101,9 @@ These engineered columns were crucial for answering time-based business question
 
 
 
-* **Product-Level Questions**
+
+
+- **PRODUCT-LEVEL QUESTIONS**
 
  	1. How many unique product lines does the data have?
 
@@ -135,8 +130,7 @@ These engineered columns were crucial for answering time-based business question
  	12. What is the average rating of each product line?
 
 
-
-* **Sales**
+- **SALES**
 
  	1. Number of sales made in each time of the day per weekday
 
@@ -148,7 +142,7 @@ These engineered columns were crucial for answering time-based business question
 
 
 
-* **Customer**
+- **CUSTOMER**
 
  	1. How many unique customer types does the data have?
 
@@ -174,37 +168,15 @@ These engineered columns were crucial for answering time-based business question
 
 
 
-\## **Tools \& Technologies**
+**TOOLS & TECHNOLOGIES**
 
 
 
-\- MySQL – Core SQL querying and analysis
+- MySQL – Core SQL querying and analysis
 
-\- MySQL Workbench – SQL editor and schema visualisation
+- MySQL Workbench – SQL editor and schema visualisation
 
-\- Python – Used for importing the dataset into MySQL (optional)
-
-
-
----
-
-
-
-\## **Learnings \& Skills Practiced**
-
-
-
-\- Writing efficient and readable SQL queries
-
-\- Using `GROUP BY`, `HAVING`, `ORDER BY`, and aggregate functions
-
-\- Applying conditional logic using `CASE` statements
-
-\- Ranking and filtering with `RANK()` and `PARTITION BY`
-
-\- Structuring pivot-style outputs with `CASE` inside `SELECT`
-
-\- Translating business KPIs into executable SQL logic
+- Python – Used for importing the dataset into MySQL (optional)
 
 
 
@@ -212,7 +184,29 @@ These engineered columns were crucial for answering time-based business question
 
 
 
-\## **Connect**
+**LEARNINGS & SKILLS PRACTICED**
+
+
+
+- Writing efficient and readable SQL queries
+
+- Using `GROUP BY`, `HAVING`, `ORDER BY`, and aggregate functions
+
+- Applying conditional logic using `CASE` statements
+
+- Ranking and filtering with `RANK()` and `PARTITION BY`
+
+- Structuring pivot-style outputs with `CASE` inside `SELECT`
+
+- Translating business KPIs into executable SQL logic
+
+
+
+---
+
+
+
+**CONNECT**
 
 
 
@@ -222,5 +216,5 @@ Let's connect if you're also learning Data Engineering, working on data related 
 
 
 
-**LinkedIn Profile:** [**www.linkedin.com/in/adityabhosale12003**](www.linkedin.com/in/adityabhosale12003)
+**LINKEDIN PROFILE:** [**www.linkedin.com/in/adityabhosale12003**](www.linkedin.com/in/adityabhosale12003)
 
